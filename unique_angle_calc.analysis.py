@@ -96,7 +96,7 @@ end = int(parameters['end'])
 with open(parameters['outputname_ang'],'w') as f:
     ffprint('Beginning trajectory analysis')
     while start <= end:
-        ffprint('Loading trajectory analysis')
+        ffprint('Loading trajectory %s' %(start))
         u.load_new('%sproduction.%s/production.%s.dcd' %(parameters['traj_loc'],start,start))
         nSteps += len(u.trajectory)
         # Loop through trajectory
