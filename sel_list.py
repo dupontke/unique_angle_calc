@@ -3,5 +3,6 @@
 
 sel = []
 sel.append(['resid 143 and name OG','resname GTP and name PA','resname GTP and name O3A'])
+sel.append(['resid 143 and name OG','resname GTP and name PB','resname GTP and name O3B'])
 
 
