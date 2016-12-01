@@ -117,12 +117,12 @@ with open(parameters['outputname_ang'],'w') as f:
                 atom2_pos = u_sel[i][1][0].position
                 atom3_pos = u_sel[i][2][0].position
                 # determine two vectors using the three atom positions
-                r12 = atom2_pos-atom1_pos
+                r12 = atom1_pos-atom2_pos
                 r12 /= np.linalg.norm(r12)
-                r13 = atom3_pos-atom1_pos
-                r13 /= np.linalg.norm(r13)
-                r12r13 = np.dot(r12,r13)
-                angle = np.arccos(r12r13)*radians_to_degrees
+                r32 = atom3_pos-atom2_pos
+                r32 /= np.linalg.norm(r32)
+                r12r32 = np.dot(r12,r32)
+                angle = np.arccos(r12r32)*radians_to_degrees
                 f.write('%10.6f     ' %(angle))
             f.write('\n')
         start +=1
