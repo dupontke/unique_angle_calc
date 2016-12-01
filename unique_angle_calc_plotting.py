@@ -51,12 +51,12 @@ print "Number of data rows:", rows
 
 for i in range(nSel):
 	selection = sel[i][2]
-	scat_hist(time[:],datalist[:,i],'k','Time (ns)','Minimum Distance','%02d.%s.%s' %(i,selection,system),'minimum_distance',yunits='$\AA$')
-	hist1d(datalist[:,i],'Minimum Distance','%02d.%s.%s' %(i,selection,system),'minimum_distance',norm=True,xunits='$\AA$')
+	scat_hist(time[:],datalist[:,i],'k','Time (ns)','Angle','%02d.%s.%s' %(i,selection,system),'angle',yunits='$\AA$')
+	hist1d(datalist[:,i],'Angle','%02d.%s.%s' %(i,selection,system),'angle',norm=True,xunits='$\AA$')
 
 	
 	# Loop through each column and create a histogram and the probability density
-	out1 = open('%02d.%s.%s.minimum_distance_calc.prob_density_hist.dat' %(i,selection,system),'w')
+	out1 = open('%02d.%s.%s.unique_angle_calc.prob_density_hist.dat' %(i,selection,system),'w')
 	
 	# determine domain of data
 	max_val = np.amax(datalist[:,i])
@@ -85,4 +85,4 @@ for i in range(nSel):
         out1.close()
 
         # scatter plot for probability density
-	plot_1d(half_bin,prob,'k','Minimum Distance','Probability Density','%02d.%s.%s' %(i,selection,system),'minimum_distance_prob_density',xunits='$\AA$')
+	plot_1d(half_bin,prob,'k','Angle','Probability Density','%02d.%s.%s' %(i,selection,system),'angle_prob_density',xunits='$\AA$')
