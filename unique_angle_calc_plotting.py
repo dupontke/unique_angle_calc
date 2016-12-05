@@ -50,7 +50,7 @@ print "Number of data rows:", rows
 
 
 for i in range(nSel):
-	selection = sel[i][2]
+	selection = sel[i][3]
 	scat_hist(time[:],datalist[:,i],'k','Time (ns)','Angle','%02d.%s.%s' %(i,selection,system),'angle',yunits='$\AA$')
 	hist1d(datalist[:,i],'Angle','%02d.%s.%s' %(i,selection,system),'angle',norm=True,xunits='$\AA$')
 
