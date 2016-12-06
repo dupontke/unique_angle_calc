@@ -51,8 +51,8 @@ print "Number of data rows:", rows
 
 for i in range(nSel):
 	selection = sel[i][3]
-	scat_hist(time[:],datalist[:,i],'k','Time (ns)','Angle','%02d.%s.%s' %(i,selection,system),'angle',yunits='$\AA$')
-	hist1d(datalist[:,i],'Angle','%02d.%s.%s' %(i,selection,system),'angle',norm=True,xunits='$\AA$')
+	scat_hist(time[:],datalist[:,i],'k','Time (ns)','Angle','%02d.%s.%s' %(i,selection,system),'angle',yunits='$\deg$')
+	hist1d(datalist[:,i],'Angle','%02d.%s.%s' %(i,selection,system),'angle',norm=True,xunits='$\deg$')
 
 	
 	# Loop through each column and create a histogram and the probability density
@@ -85,4 +85,4 @@ for i in range(nSel):
         out1.close()
 
         # scatter plot for probability density
-	plot_1d(half_bin,prob,'k','Angle','Probability Density','%02d.%s.%s' %(i,selection,system),'angle_prob_density',xunits='$\AA$')
+	plot_1d(half_bin,prob,'k','Angle','Probability Density','%02d.%s.%s' %(i,selection,system),'angle_prob_density',xunits='$\deg$')
